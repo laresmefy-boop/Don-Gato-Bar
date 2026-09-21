@@ -1,632 +1,393 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don Gato Bar & Restaurante | Menú QR Poptún, Petén</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            orange: '#F97316',
-                            amber: '#F59E0B',
-                            dark: '#0F0D0C',
-                            card: '#1C1917',
-                            border: '#2A2725',
-                            neon: '#FF5722'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Outfit"', 'sans-serif']
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don Gato Bar & Restaurante | Menú Digital</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              gold: '#EAB308',
+              dark: '#0A0A0A',
+              card: '#141414',
+              border: '#262626'
             }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            display: ['Oswald', 'sans-serif']
+          }
         }
-    </script>
-
-    <style>
-        .glass-header {
-            background: rgba(15, 13, 12, 0.90);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-        .hero-bg {
-            background: linear-gradient(180deg, rgba(15, 13, 12, 0.7) 0%, rgba(15, 13, 12, 0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #1C1917;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #F97316;
-            border-radius: 4px;
-        }
-        .insta-gradient {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.25);
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0A0A0A;
+      color: #F5F5F5;
+      background-image: radial-gradient(circle at 50% 0%, rgba(250, 204, 21, 0.05) 0%, transparent 70%);
+      background-attachment: fixed;
+    }
+    .amber-glow {
+      text-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+    }
+    .amber-box-glow {
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
-<body class="bg-brand-dark text-stone-200 font-sans antialiased selection:bg-brand-orange selection:text-white flex flex-col min-h-screen">
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-yellow selection:text-black">
 
-    <!-- HEADER NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-brand-border transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-orange via-brand-amber to-yellow-500 flex items-center justify-center text-stone-950 font-black text-2xl shadow-lg shadow-brand-orange/30 transform group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-cat"></i>
-                </div>
-                <div>
-                    <span class="text-xl sm:text-2xl font-black tracking-wider text-white block leading-none font-display">DON GATO</span>
-                    <span class="text-[10px] sm:text-xs text-brand-amber font-bold uppercase tracking-widest flex items-center gap-1 mt-0.5">
-                        <i class="fa-solid fa-beer-mug-empty text-[10px]"></i> BAR & RESTAURANTE
-                    </span>
-                </div>
-            </a>
-
-            <!-- Mesa Active Selector Indicator -->
-            <button onclick="openMesaModal()" class="flex items-center gap-2 bg-stone-900 border border-brand-orange/50 hover:border-brand-orange text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl transition-all shadow-md group">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-orange"></span>
-                </span>
-                <div class="text-left">
-                    <p class="text-[9px] uppercase tracking-wider text-stone-400 font-bold leading-none">Ubicación</p>
-                    <p id="header-mesa-label" class="text-xs sm:text-sm font-black text-brand-amber font-display leading-tight">Mesa 1</p>
-                </div>
-                <i class="fa-solid fa-chevron-down text-xs text-stone-400 group-hover:text-brand-orange transition-colors ml-1"></i>
-            </button>
-
-            <!-- Actions -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <!-- Instagram Link -->
-                <a href="https://www.instagram.com/dongato_bar" target="_blank" class="insta-gradient hover:brightness-110 text-white font-bold p-2.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm flex items-center gap-2 shadow-md transition-all">
-                    <i class="fa-brands fa-instagram text-base"></i>
-                    <span class="hidden md:inline">@dongato_bar</span>
-                </a>
-
-                <!-- Cart Button -->
-                <button onclick="toggleCartModal()" class="relative bg-stone-800 hover:bg-stone-700 text-white p-2.5 rounded-full border border-stone-700 transition-all flex items-center justify-center shadow-md">
-                    <i class="fa-solid fa-wine-glass text-lg text-brand-orange"></i>
-                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-orange text-stone-950 text-xs font-black w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform">0</span>
-                </button>
-            </div>
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="https://iili.io/nTQRB8N.png" alt="Don Gato Logo" class="h-12 w-auto object-contain">
+        <div>
+          <span class="font-display text-2xl font-bold tracking-wider text-brand-yellow block leading-none">DON GATO</span>
+          <span class="text-[10px] tracking-widest text-zinc-400 uppercase font-semibold">Bar & Restaurante</span>
         </div>
-    </header>
+      </a>
 
-    <!-- MESA SELECTOR MODAL -->
-    <div id="mesa-modal" class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300 flex items-center justify-center p-4">
-        <div onclick="closeMesaModal()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
-        <div class="relative bg-stone-950 border border-stone-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 space-y-6">
-            <div class="flex items-center justify-between border-b border-stone-800 pb-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-brand-orange/20 border border-brand-orange/40 text-brand-orange flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-qrcode"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-black text-white font-display">¿Dónde estás ubicado?</h3>
-                        <p class="text-xs text-stone-400">Selecciona tu número de mesa o modalidad de servicio</p>
-                    </div>
-                </div>
-                <button onclick="closeMesaModal()" class="text-stone-400 hover:text-white text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
+      <!-- Botón del Carrito -->
+      <button id="cartBtn" onclick="toggleCart()" class="relative bg-brand-yellow text-black font-bold px-4 py-2.5 rounded-full flex items-center gap-2 hover:bg-yellow-400 transition-all transform active:scale-95 shadow-lg shadow-brand-yellow/20">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="hidden sm:inline">Tu Pedido</span>
+        <span id="cartCount" class="bg-black text-brand-yellow text-xs px-2 py-0.5 rounded-full font-black">0</span>
+      </button>
+    </div>
+  </header>
 
-            <!-- Grid of Mesas -->
-            <div class="space-y-3">
-                <label class="text-xs font-bold text-brand-orange uppercase tracking-wider block">Mesas del Local</label>
-                <div class="grid grid-cols-4 gap-2.5 max-h-48 overflow-y-auto custom-scrollbar p-1">
-                    <!-- Mesa Buttons generated dynamically or static -->
-                    <button onclick="selectMesa('Mesa 1')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 1</button>
-                    <button onclick="selectMesa('Mesa 2')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 2</button>
-                    <button onclick="selectMesa('Mesa 3')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 3</button>
-                    <button onclick="selectMesa('Mesa 4')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 4</button>
-                    <button onclick="selectMesa('Mesa 5')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 5</button>
-                    <button onclick="selectMesa('Mesa 6')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 6</button>
-                    <button onclick="selectMesa('Mesa 7')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 7</button>
-                    <button onclick="selectMesa('Mesa 8')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 8</button>
-                    <button onclick="selectMesa('Mesa 9')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 9</button>
-                    <button onclick="selectMesa('Mesa 10')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 10</button>
-                    <button onclick="selectMesa('Mesa 11')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 11</button>
-                    <button onclick="selectMesa('Mesa 12')" class="mesa-btn py-2.5 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-orange hover:text-brand-orange transition-all">Mesa 12</button>
-                </div>
-            </div>
+  <!-- HERO SECTION CON FONDO DE BAR -->
+  <section class="relative bg-cover bg-center py-20 px-4 flex items-center justify-center text-center overflow-hidden border-b border-brand-border" style="background-image: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('https://iili.io/nTQRn9I.jpg');">
+    <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+      <img src="https://iili.io/nTQRB8N.png" alt="Don Gato Bar Logo" class="h-28 mx-auto drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)] animate-pulse">
+      <h1 class="font-display text-4xl sm:text-6xl font-black text-white uppercase tracking-tight">
+        Sabor Único & <span class="text-brand-yellow amber-glow">Buena Cerveza</span>
+      </h1>
+      <p class="text-zinc-300 text-base sm:text-lg max-w-xl mx-auto font-medium">
+        Disfruta de las mejores hamburguesas artesanales, piqueos, alitas y bebidas frías en el mejor ambiente.
+      </p>
+      <div class="pt-2">
+        <a href="#menu" class="inline-block bg-brand-yellow text-black font-extrabold px-8 py-3.5 rounded-full text-lg hover:bg-yellow-400 transition-all transform hover:-translate-y-1 shadow-xl shadow-brand-yellow/20">
+          Ver Carta & Ordenar
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <!-- Alternative Locations -->
-            <div class="space-y-3 pt-2 border-t border-stone-800">
-                <label class="text-xs font-bold text-brand-amber uppercase tracking-wider block">Otras Opciones</label>
-                <div class="grid grid-cols-2 gap-3">
-                    <button onclick="selectMesa('Barra Principal')" class="py-3 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-amber hover:text-brand-amber transition-all flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-beer-mug-empty text-brand-amber"></i> Barra Principal
-                    </button>
-                    <button onclick="selectMesa('Para Llevar / Delivery')" class="py-3 bg-stone-900 border border-stone-800 rounded-xl text-xs font-bold text-stone-200 hover:border-brand-amber hover:text-brand-amber transition-all flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-bag-shopping text-brand-orange"></i> Para Llevar
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-stone-900/80 p-3.5 rounded-2xl border border-stone-800 text-center text-xs text-stone-400">
-                <p>💡 <span class="font-bold text-white">Consejo QR:</span> Si escaneas el código QR impreso en tu mesa, el número se asignará automáticamente.</p>
-            </div>
+  <!-- SECCIÓN EXPERIENCIA / AMBIENTE -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-center font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide text-zinc-300 mb-8">
+      La Experiencia <span class="text-brand-yellow">Don Gato</span>
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border group hover:border-brand-yellow transition-all">
+        <div class="h-48 overflow-hidden">
+          <img src="https://iili.io/nTQQG8F.jpg" alt="Hamburguesa Don Gato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </div>
+        <div class="p-4">
+          <h3 class="font-display text-xl font-bold text-white mb-1">Hamburguesas Top</h3>
+          <p class="text-zinc-400 text-sm">Carne 100% vacuna, pan artesanal y recetas únicas preparadas al momento.</p>
+        </div>
+      </div>
+
+      <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border group hover:border-brand-yellow transition-all">
+        <div class="h-48 overflow-hidden">
+          <img src="https://iili.io/nTQQuyu.jpg" alt="Cervezas heladas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-xl font-bold text-white mb-1">Bebidas Heladas</h3>
+          <p class="text-zinc-400 text-sm">Cervezas nacionales, hidromiel, frappés y smoothies súper refrescantes.</p>
+        </div>
+      </div>
+
+      <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border group hover:border-brand-yellow transition-all">
+        <div class="h-48 overflow-hidden">
+          <img src="https://iili.io/nTQQRTb.jpg" alt="Alitas Don Gato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-xl font-bold text-white mb-1">Piqueos & Alitas</h3>
+          <p class="text-zinc-400 text-sm">Las mejores salsas caseras: Piña Habanero, Tamarindo, BBQ y Búfalo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENEDOR PRINCIPAL DEL MENÚ -->
+  <main id="menu" class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
+    
+    <div class="text-center mb-8">
+      <span class="text-brand-yellow font-bold text-sm tracking-widest uppercase">NUESTRA CARTA COMPLETA</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-black text-white uppercase tracking-tight mt-1">Elige tu Antojo</h2>
+      <div class="w-20 h-1 bg-brand-yellow mx-auto mt-3 rounded-full"></div>
     </div>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="hero-bg pt-32 pb-16 md:pt-40 md:pb-28 px-4 flex items-center relative overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center space-y-6 relative z-10">
-            
-            <div id="mesa-banner" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/20 border border-brand-orange/50 text-brand-orange text-xs sm:text-sm font-bold tracking-wide backdrop-blur-md">
-                <i class="fa-solid fa-qrcode text-brand-amber"></i> <span id="banner-mesa-text">Atendiendo en: Mesa 1</span>
-                <button onclick="openMesaModal()" class="underline text-white ml-2 hover:text-brand-amber">(Cambiar)</button>
-            </div>
-            
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight font-display tracking-tight">
-                Haz tu Pedido desde la Mesa en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-amber to-yellow-400">Don Gato Bar</span>
-            </h1>
-            
-            <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto font-normal leading-relaxed">
-                Selecciona tus hamburguesas, alitas o tragos helados sin esperar. Tu pedido llegará directamente a la cocina marcando tu número de mesa.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-                <a href="#menu" class="w-full sm:w-auto bg-gradient-to-r from-brand-orange to-brand-amber text-stone-950 font-black px-8 py-4 rounded-full text-lg shadow-xl neon-glow hover:scale-105 transition-all text-center">
-                    <i class="fa-solid fa-utensils mr-2"></i> Explorar Menú & Pedir
-                </a>
-                <a href="https://www.instagram.com/dongato_bar" target="_blank" class="w-full sm:w-auto bg-stone-900/90 hover:bg-stone-800 border border-pink-500/40 text-white font-bold px-8 py-4 rounded-full text-lg backdrop-blur-md transition-all text-center flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-instagram text-pink-500 text-xl"></i> Ver @dongato_bar
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- MENU SECTION -->
-    <section id="menu" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="text-center max-w-3xl mx-auto space-y-3 mb-10">
-            <span class="text-brand-orange font-bold text-xs tracking-widest uppercase">Gastronomía & Coctelería en Poptún</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-white font-display">Menú Digital para Mesa</h2>
-            <p class="text-stone-400 text-xs sm:text-sm">Agrega los platillos al carrito y envía la comanda directo con tu número de mesa.</p>
-        </div>
-
-        <!-- Filter Category Buttons -->
-        <div class="flex items-center justify-start md:justify-center gap-2.5 overflow-x-auto pb-4 custom-scrollbar mb-10">
-            <button onclick="filterCategory('todos')" class="cat-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-brand-orange bg-brand-orange text-stone-950 shadow-md" data-category="todos">
-                <i class="fa-solid fa-border-all mr-1.5"></i> Todos
-            </button>
-            <button onclick="filterCategory('hamburguesas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange" data-category="hamburguesas">
-                <i class="fa-solid fa-burger mr-1.5 text-brand-orange"></i> Hamburguesas
-            </button>
-            <button onclick="filterCategory('alitas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange" data-category="alitas">
-                <i class="fa-solid fa-drumstick-bite mr-1.5 text-brand-amber"></i> Alitas & Boneless
-            </button>
-            <button onclick="filterCategory('botanas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange" data-category="botanas">
-                <i class="fa-solid fa-cheese mr-1.5 text-yellow-500"></i> Botanas & Picadas
-            </button>
-            <button onclick="filterCategory('bebidas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange" data-category="bebidas">
-                <i class="fa-solid fa-beer-mug-empty mr-1.5 text-amber-400"></i> Cervezas & Tragos
-            </button>
-        </div>
-
-        <!-- Menu Items Grid -->
-        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <!-- Dynamically populated by JS -->
-        </div>
-    </section>
-
-    <!-- CART MODAL / PANEL -->
-    <div id="cart-modal" class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300 pointer-events-none">
-        <div onclick="toggleCartModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-stone-950 border-l border-stone-800 shadow-2xl flex flex-col transition-transform duration-300 translate-x-full" id="cart-drawer">
-            
-            <!-- Cart Header -->
-            <div class="p-5 border-b border-stone-800 flex items-center justify-between bg-stone-900/60">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-wine-glass"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-white font-display">Tu Comanda de Pedido</h3>
-                        <p class="text-xs text-brand-amber font-bold" id="cart-mesa-display">📍 Mesa 1</p>
-                    </div>
-                </div>
-                <button onclick="toggleCartModal()" class="text-stone-400 hover:text-white text-xl p-1">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Cart Items List -->
-            <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-3 custom-scrollbar">
-                <!-- Items injected by JS -->
-            </div>
-
-            <!-- Cart Form & Actions -->
-            <div class="p-5 border-t border-stone-800 bg-stone-900/80 space-y-4">
-                
-                <!-- Active Mesa Card inside Cart -->
-                <div class="bg-stone-950 p-3.5 rounded-2xl border border-stone-800 flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                        <i class="fa-solid fa-chair text-brand-orange text-lg"></i>
-                        <div>
-                            <p class="text-[10px] text-stone-400 uppercase font-bold">Ubicación confirmada</p>
-                            <p class="text-xs font-black text-white font-display" id="cart-mesa-name">Mesa 1</p>
-                        </div>
-                    </div>
-                    <button onclick="openMesaModal()" class="text-xs font-bold text-brand-amber hover:underline">
-                        Cambiar
-                    </button>
-                </div>
-
-                <div class="space-y-1.5">
-                    <div class="flex justify-between text-stone-400 text-xs">
-                        <span>Subtotal comanda:</span>
-                        <span id="cart-subtotal" class="text-white font-medium">Q 0.00</span>
-                    </div>
-                    <div class="flex justify-between text-white font-black text-lg pt-1 border-t border-stone-800 font-display">
-                        <span>Total a Pagar:</span>
-                        <span id="cart-total" class="text-brand-orange">Q 0.00</span>
-                    </div>
-                </div>
-
-                <!-- Customer Info -->
-                <div class="space-y-2 pt-1">
-                    <input type="text" id="cust-name" placeholder="Nombre del Cliente (Opcional)" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-brand-orange">
-                    <textarea id="cust-notes" placeholder="Notas especiales (Ej. Michelada sin sal, hamburguesa sin cebolla, etc.)" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-brand-orange h-14 resize-none"></textarea>
-                </div>
-
-                <!-- Action Button -->
-                <button onclick="sendOrderWhatsApp()" class="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-500 hover:to-emerald-400 text-white font-black py-3 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all text-sm">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Pedido a Cocina/Barra
-                </button>
-            </div>
-        </div>
+    <!-- Filtros de Categorías -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar scroll-smooth justify-start sm:justify-center">
+      <button onclick="filterCategory('all')" class="cat-btn active bg-brand-yellow text-black font-bold px-5 py-2.5 rounded-full whitespace-nowrap transition-all text-sm uppercase">Todos</button>
+      <button onclick="filterCategory('burguers')" class="cat-btn bg-brand-card hover:bg-zinc-800 text-zinc-300 font-bold px-5 py-2.5 rounded-full whitespace-nowrap border border-brand-border transition-all text-sm uppercase">Burguers</button>
+      <button onclick="filterCategory('compartir')" class="cat-btn bg-brand-card hover:bg-zinc-800 text-zinc-300 font-bold px-5 py-2.5 rounded-full whitespace-nowrap border border-brand-border transition-all text-sm uppercase">Para Compartir</button>
+      <button onclick="filterCategory('alitas')" class="cat-btn bg-brand-card hover:bg-zinc-800 text-zinc-300 font-bold px-5 py-2.5 rounded-full whitespace-nowrap border border-brand-border transition-all text-sm uppercase">Alitas</button>
+      <button onclick="filterCategory('fuertes')" class="cat-btn bg-brand-card hover:bg-zinc-800 text-zinc-300 font-bold px-5 py-2.5 rounded-full whitespace-nowrap border border-brand-border transition-all text-sm uppercase">Platos Fuertes</button>
+      <button onclick="filterCategory('pastas-sopas')" class="cat-btn bg-brand-card hover:bg-zinc-800 text-zinc-300 font-bold px-5 py-2.5 rounded-full whitespace-nowrap border border-brand-border transition-all text-sm uppercase">Pastas & Sopas</button>
+      <button onclick="filterCategory('bebidas')" class="cat-btn bg-brand-card hover:bg-zinc-800 text-zinc-300 font-bold px-5 py-2.5 rounded-full whitespace-nowrap border border-brand-border transition-all text-sm uppercase">Bebidas</button>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="mt-auto bg-stone-950 border-t border-stone-800 text-stone-500 text-xs py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-xl bg-brand-orange text-stone-950 font-black flex items-center justify-center text-sm">
-                    <i class="fa-solid fa-cat"></i>
-                </div>
-                <span class="text-stone-300 font-bold">Don Gato Bar & Restaurante · Poptún, Petén</span>
-            </div>
-            <p class="text-stone-500 text-center">
-                Atención vía WhatsApp al <span class="text-brand-amber font-bold">+502 3589 7890</span> | Instagram <a href="https://www.instagram.com/dongato_bar" target="_blank" class="text-pink-500 font-bold hover:underline">@dongato_bar</a>
-            </p>
+    <!-- Grid del Menú -->
+    <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Generado dinámicamente con JS -->
+    </div>
+
+  </main>
+
+  <!-- MODAL / DRAWER DEL CARRITO -->
+  <div id="cartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden transition-opacity flex justify-end">
+    <div class="bg-brand-card w-full max-w-md h-full flex flex-col justify-between border-l border-brand-border p-6 overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-brand-border">
+          <h3 class="font-display text-2xl font-bold text-white uppercase flex items-center gap-2">
+            <i class="fa-solid fa-burger text-brand-yellow"></i> Tu Orden
+          </h3>
+          <button onclick="toggleCart()" class="text-zinc-400 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-    </footer>
 
-    <script>
-        // MENU ITEMS
-        const menuItems = [
-            {
-                id: 1,
-                name: "La Don Gato Special Burger",
-                category: "hamburguesas",
-                price: 48.00,
-                description: "Doble torta de carne res madurada, doble queso cheddar fundido, tocineta ahumada, cebolla crispy y salsa secreta Don Gato.",
-                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600&auto=format&fit=crop",
-                badge: "La Más Pedida 🔥"
-            },
-            {
-                id: 2,
-                name: "Bacon Cheese Smash",
-                category: "hamburguesas",
-                price: 45.00,
-                description: "Carne aplastada en plancha caliente con costra crujiente, queso americano, tocino caramelizado y pepinillos caseros.",
-                image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                id: 3,
-                name: "Hamburguesa Petenera BBQ",
-                category: "hamburguesas",
-                price: 52.00,
-                description: "Carne de res, queso asado de la región, aros de cebolla empanizados, jalapeños salteados y salsa BBQ ahumada.",
-                image: "https://images.unsplash.com/photo-1583778176476-4a8b02a64c01?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                id: 4,
-                name: "Alitas Don Gato (10 Pzs)",
-                category: "alitas",
-                price: 55.00,
-                description: "Alitas doradas en tu salsa a elección: Buffalo Picante, BBQ Ahumada, Miel Mostaza o Ajo Parmesano. Incluye aderezo Ranch.",
-                image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?q=80&w=600&auto=format&fit=crop",
-                badge: "Ideal con Cerveza 🍺"
-            },
-            {
-                id: 5,
-                name: "Boneless Crunch & Chips",
-                category: "alitas",
-                price: 48.00,
-                description: "Bocados de pechuga empanizada y bañada en salsa, servidos con abundante porción de papas fritas sazonadas.",
-                image: "https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                id: 6,
-                name: "Nachos Supremos Don Gato",
-                category: "botanas",
-                price: 45.00,
-                description: "Totopos crocantes bañados en queso cheddar caliente, frijoles negros, carne molida sazonada, guacamole y jalapeños.",
-                image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                id: 7,
-                name: "Tabla de Puyaso & Chicharrones",
-                category: "botanas",
-                price: 75.00,
-                description: "Picada para compartir con tiras de puyaso a la parrilla, chicharrones crujientes, guacamol, chirmol y tortillas tostadas.",
-                image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop",
-                badge: "Para Compartir"
-            },
-            {
-                id: 8,
-                name: "Michelada Don Gato Especial",
-                category: "bebidas",
-                price: 28.00,
-                description: "Cerveza nacional a elección preparada con jugo de limón fresco, mezcla secreta de salsas picantes y vasos escarchados.",
-                image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600&auto=format&fit=crop",
-                badge: "Favorita 🍹"
-            },
-            {
-                id: 9,
-                name: "Cubetazo Cerveza Nacional (5 Pzs)",
-                category: "bebidas",
-                price: 85.00,
-                description: "Cubeta con 5 cervezas bien heladas (Gallo o Monte Carlo) servidas con hielo y boquita salada.",
-                image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=600&auto=format&fit=crop"
-            }
-        ];
+        <div id="cartItems" class="py-4 space-y-4">
+          <!-- Items del carrito -->
+        </div>
+      </div>
 
-        // GLOBAL STATE
-        let activeMesa = "Mesa 1";
-        let cart = [];
+      <div class="border-t border-brand-border pt-4 space-y-4">
+        <div class="flex justify-between items-center text-lg font-bold text-white">
+          <span>Total:</span>
+          <span id="cartTotal" class="text-brand-yellow font-display text-2xl">Q0.00</span>
+        </div>
 
-        // INITIALIZE & DETECT QR PARAMETER
-        function initMesaFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const mesaParam = urlParams.get('mesa') || urlParams.get('m');
+        <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 transition-all text-lg">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <span>Hacer Pedido</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-            if (mesaParam) {
-                // If standard number like ?mesa=4 or ?mesa=Mesa%204
-                if (!isNaN(mesaParam)) {
-                    activeMesa = `Mesa ${mesaParam}`;
-                } else {
-                    activeMesa = mesaParam;
-                }
-            } else {
-                // Default fallback if no parameter in URL
-                activeMesa = "Mesa 1";
-            }
-            updateMesaUI();
-        }
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-brand-border py-8 text-center text-zinc-500 text-sm mt-12">
+    <div class="max-w-6xl mx-auto px-4 space-y-4">
+      <img src="https://iili.io/nTQRB8N.png" alt="Don Gato" class="h-10 mx-auto opacity-70">
+      <p class="text-zinc-400">¡El mejor ambiente y sabor en un solo lugar!</p>
+      <div class="flex justify-center gap-6 text-xl text-zinc-400">
+        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+      <p class="text-xs text-zinc-600">&copy; Don Gato Bar & Restaurante. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-        // UPDATE MESA LABELS IN INTERFACE
-        function updateMesaUI() {
-            document.getElementById('header-mesa-label').textContent = activeMesa;
-            document.getElementById('banner-mesa-text').textContent = `Atendiendo en: ${activeMesa}`;
-            document.getElementById('cart-mesa-display').textContent = `📍 ${activeMesa}`;
-            document.getElementById('cart-mesa-name').textContent = activeMesa;
-        }
+  <!-- JAVASCRIPT DE LA CARTA Y CARRITO -->
+  <script>
+    // BASE DE DATOS COMPLETA DEL MENÚ DE DON GATO
+    const menuData = [
+      // BURGUERS (Usando la imagen solicitada: https://iili.io/nTQQG8F.jpg)
+      { id: 'b1', name: 'DON GATO BURGER', price: 40, cat: 'burguers', desc: 'Pan artesanal, queso americano, tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate y crema jalapeño semipicante. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b2', name: 'TORITO', price: 45, cat: 'burguers', desc: 'Pan artesanal, queso americano, tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate, jamón de pavo y huevo. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b3', name: 'MATUTE', price: 48, cat: 'burguers', desc: 'Pan artesanal, queso americano, filete de pechuga, lechuga escarola, tomate, cebolla morada, aguacate y aderezo de tamarindo. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b4', name: 'CRISPY CHICKEN', price: 52, cat: 'burguers', desc: 'Pan artesanal, queso americano, pechuga de pollo empanizada, lechuga escarola, tomate, cebolla morada, aguacate, aderezo chipotle. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b5', name: 'POPEYE EL MARINO', price: 48, cat: 'burguers', desc: 'Pan artesanal, queso americano, tortita de carne, tocino, lechuga escarola, tomate, cebolla morada, aguacate y salsa barbacoa. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b6', name: 'SUPER TORITO', price: 52, cat: 'burguers', desc: 'Pan artesanal, queso americano, tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate, jamón de pavo, tocino y doble huevo. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b7', name: 'DON GATO DOBLE', price: 63, cat: 'burguers', desc: 'Pan artesanal, queso americano, doble tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate y crema jalapeño semipicante. (Doble de papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b8', name: 'GOLIAT', price: 66, cat: 'burguers', desc: 'Pan artesanal, queso americano, tortita de carne, filete de pechuga, tocino, lechuga escarola, tomate, cebolla morada, aguacate y crema jalapeño semipicante. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b9', name: 'CHEESE BURGUER', price: 35, cat: 'burguers', desc: 'Pan artesanal, doble queso americano, tortita de carne. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b10', name: 'CAMARÓN', price: 70, cat: 'burguers', desc: 'Pan artesanal, queso mozarella rallado, camarones empanizados, aros de cebolla empanizados, lechuga escarola, tomate y guacamole. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
+      { id: 'b11', name: 'MAR Y TIERRA', price: 80, cat: 'burguers', desc: 'Pan artesanal, queso mozarella rallado, camarones empanizados, tortita de carne, queso americano, cebolla morada, lechuga escarola, tomate, guacamole y aderezo de la casa. (Incluye papas)', img: 'https://iili.io/nTQQG8F.jpg' },
 
-        function selectMesa(mesaName) {
-            activeMesa = mesaName;
-            updateMesaUI();
-            closeMesaModal();
-        }
+      // PARA COMPARTIR
+      { id: 'c1', name: 'PAPAS FRITAS', price: 25, cat: 'compartir', desc: 'Una libra de papas fritas, crujientes y en su punto exacto.' },
+      { id: 'c2', name: 'PAPAS TOCINO Y QUESO', price: 35, cat: 'compartir', desc: 'Una libra de papas fritas bañadas con queso derretido y espolvoreadas con trozos de tocino crujiente.' },
+      { id: 'c3', name: 'PAPAS SALTEADAS', price: 35, cat: 'compartir', desc: 'Deliciosas papas salteadas al fuego con mantequilla, un toque de ajo dorado.' },
+      { id: 'c4', name: 'NACHOS', price: 42, cat: 'compartir', desc: 'Nachos, pico de gallo, queso y guacamole.' },
+      { id: 'c5', name: 'NACHOS SUPREMOS', price: 65, cat: 'compartir', desc: 'Nachos, pico de gallo, aguacate y chili beans con queso derretido encima.' },
+      { id: 'c6', name: 'COSTILLITAS BBQ', price: 60, cat: 'compartir', desc: 'Una libra de costillitas de cerdo bañadas en salsa BBQ.' },
 
-        function openMesaModal() {
-            const modal = document.getElementById('mesa-modal');
-            modal.classList.remove('invisible', 'opacity-0');
-        }
+      // ALITAS
+      { id: 'a1', name: 'ALITAS EMPANIZADAS', price: 55, cat: 'alitas', desc: 'Crujientes alitas empanizadas estilo Don Gato.' },
+      { id: 'a2', name: 'ALITAS BBQ', price: 55, cat: 'alitas', desc: 'Bañadas en deliciosa salsa barbacoa de la casa.' },
+      { id: 'a3', name: 'ALITAS BÚFALOS', price: 55, cat: 'alitas', desc: 'Con salsa búfalo picante en su punto.' },
+      { id: 'a4', name: 'ALITAS PIÑA HABANERO', price: 55, cat: 'alitas', desc: 'Sabor agridulce y toque picante de habanero.' },
+      { id: 'a5', name: 'ALITAS TAMARINDO', price: 55, cat: 'alitas', desc: 'Bañadas en aderezo artesanal de tamarindo.' },
+      { id: 'a6', name: 'ALITAS SALSAS MIXTAS', price: 55, cat: 'alitas', desc: 'Combina tus salsas favoritas.' },
+      { id: 'a7', name: 'ALITAS SUPREMAS', price: 75, cat: 'alitas', desc: 'Porción grande acompañada de papas fritas y ensalada.' },
 
-        function closeMesaModal() {
-            const modal = document.getElementById('mesa-modal');
-            modal.classList.add('opacity-0');
-            setTimeout(() => modal.classList.add('invisible'), 300);
-        }
+      // PLATOS FUERTES
+      { id: 'f1', name: 'PECHUGA A LA PLANCHA', price: 55, cat: 'fuertes', desc: '8 oz de filete de pechuga a la plancha acompañada de dos guarniciones.' },
+      { id: 'f2', name: 'CHURRASQUITO', price: 65, cat: 'fuertes', desc: '8 oz de carne de res a la plancha acompañada de dos guarniciones.' },
+      { id: 'f3', name: 'COSTILLA DE CERDO A LA BBQ', price: 60, cat: 'fuertes', desc: '8 oz de costilla de cerdo bañada en salsa barbacoa con dos guarniciones.' },
+      { id: 'f4', name: 'CHULETA DE CERDO', price: 60, cat: 'fuertes', desc: 'Deliciosa chuleta importada de cerdo acompañada de dos guarniciones.' },
+      { id: 'f5', name: 'ENSALADA DE LA CASA', price: 50, cat: 'fuertes', desc: 'Mezcla de vegetales frescos con pollo a la plancha, crutones y aderezo casero.' },
+      { id: 'f6', name: 'CAMARONES AL MOJO DE AJO', price: 110, cat: 'fuertes', desc: '8 oz de camarones jumbo en mantequilla de ajo, ensalada verde y papas.' },
+      { id: 'f7', name: 'CAMARONES EMPANIZADOS', price: 110, cat: 'fuertes', desc: '8 oz de camarones jumbo empanizados con ensalada verde y papas.' },
 
-        // RENDER MENU ITEMS
-        function renderMenu(items) {
-            const grid = document.getElementById('menu-grid');
-            grid.innerHTML = '';
+      // PASTAS & SOPAS
+      { id: 'ps1', name: 'PASTA ALFREDO CON POLLO', price: 60, cat: 'pastas-sopas', desc: 'Cremosa pasta Alfredo servida con trozos de pollo a la plancha.' },
+      { id: 'ps2', name: 'PASTA ALFREDO CON CAMARONES', price: 65, cat: 'pastas-sopas', desc: 'Cremosa pasta Alfredo servida con camarones salteados.' },
+      { id: 'ps3', name: 'PASTA ALFREDO MIXTA', price: 85, cat: 'pastas-sopas', desc: 'Cremosa pasta Alfredo con la combinación de pollo y camarones.' },
+      { id: 'ps4', name: 'SOPA DE HUEVO', price: 45, cat: 'pastas-sopas', desc: 'Sopa casera reconfortante de huevo.' },
+      { id: 'ps5', name: 'SOPA DE POLLO', price: 50, cat: 'pastas-sopas', desc: 'Sopa caliente de pollo con vegetales frescos.' },
 
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "bg-stone-900 rounded-2xl border border-stone-800 overflow-hidden flex flex-col hover:border-brand-orange/60 transition-all duration-300 group shadow-xl";
-                
-                card.innerHTML = `
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        ${item.badge ? `<span class="absolute top-3 left-3 bg-brand-orange text-stone-950 text-xs font-black px-3 py-1 rounded-full shadow-md">${item.badge}</span>` : ''}
-                        <span class="absolute bottom-3 right-3 bg-stone-950/90 backdrop-blur-md text-brand-amber font-black text-base px-3 py-1 rounded-lg border border-stone-700 font-display">
-                            Q ${item.price.toFixed(2)}
-                        </span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-base font-bold text-white group-hover:text-brand-orange transition-colors font-display">${item.name}</h3>
-                            <p class="text-stone-400 text-xs mt-1.5 leading-relaxed font-normal">${item.description}</p>
-                        </div>
-                        <button onclick="addToCart(${item.id})" class="w-full bg-stone-800 hover:bg-brand-orange text-white hover:text-stone-950 font-bold py-2.5 rounded-xl border border-stone-700 hover:border-brand-orange transition-all text-xs flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus text-xs"></i> Agregar a la Comanda
-                        </button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+      // BEBIDAS
+      { id: 'be1', name: 'SANDIA ROCK & ROLL (Smoothie)', price: 25, cat: 'bebidas', desc: 'Sandía + Limón + Menta.' },
+      { id: 'be2', name: 'CERRO LAS TRES CRUCES (Smoothie)', price: 28, cat: 'bebidas', desc: 'Fresa + Banano + Yogurth.' },
+      { id: 'be3', name: 'SMOOTHIE CHISPUDO', price: 30, cat: 'bebidas', desc: 'Frutos rojos + Banano + Yogurth.' },
+      { id: 'be4', name: 'CERRO DE LA BRUJA (Smoothie)', price: 28, cat: 'bebidas', desc: 'Kiwi + Naranja + Piña.' },
+      { id: 'be5', name: 'FRAPPE OREO', price: 25, cat: 'bebidas', desc: 'Frappé helado batido con galletas Oreo.' },
+      { id: 'be6', name: 'FRAPPE CAFÉ', price: 22, cat: 'bebidas', desc: 'Café frío batido con hielo y crema.' },
+      { id: 'be7', name: 'FRAPPE OREO BAILEYS', price: 35, cat: 'bebidas', desc: 'Deliciosa mezcla de Oreo con un toque de Baileys.' },
+      { id: 'be8', name: 'NARANJADA (Natural/Soda)', price: 20, cat: 'bebidas', desc: 'Naranjada natural (Q20) o en soda (Q22).' },
+      { id: 'be9', name: 'LIMONADA (Natural/Soda)', price: 20, cat: 'bebidas', desc: 'Limonada natural (Q20) o en soda (Q22).' },
+      { id: 'be10', name: 'JAMAICA FROZZEN', price: 22, cat: 'bebidas', desc: 'Refrescante rosa de jamaica granizada.' },
+      { id: 'be11', name: 'JUGO DE MARACUYA', price: 22, cat: 'bebidas', desc: 'Jugo natural de fruta de la pasión.' },
+      { id: 'be12', name: 'PICHEL DE BEBIDA (Jamaica, Limón, Tamarindo, Maracuyá)', price: 40, cat: 'bebidas', desc: 'Pichel para compartir. (Maracuyá Q48, otros sabores Q40).' },
+      { id: 'be13', name: 'CAFÉ AMERICANO / BONITO', price: 12, cat: 'bebidas', desc: 'Americano Q12, Café Bonito (con bola de helado) Q20.' }
+    ];
 
-        function filterCategory(category) {
-            const buttons = document.querySelectorAll('.cat-btn');
-            buttons.forEach(btn => {
-                if (btn.dataset.category === category) {
-                    btn.classList.add('bg-brand-orange', 'text-stone-950', 'border-brand-orange');
-                    btn.classList.remove('bg-stone-900', 'text-stone-300', 'border-stone-800');
-                } else {
-                    btn.classList.remove('bg-brand-orange', 'text-stone-950', 'border-brand-orange');
-                    btn.classList.add('bg-stone-900', 'text-stone-300', 'border-stone-800');
-                }
-            });
+    let cart = [];
 
-            if (category === 'todos') {
-                renderMenu(menuItems);
-            } else {
-                const filtered = menuItems.filter(item => item.category === category);
-                renderMenu(filtered);
-            }
-        }
+    // RENDERIZAR MENÚ
+    function renderMenu(items) {
+      const grid = document.getElementById('menuGrid');
+      grid.innerHTML = items.map(item => `
+        <div class="bg-brand-card rounded-2xl p-5 border border-brand-border flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div class="flex gap-4">
+            ${item.img ? `<img src="${item.img}" class="w-24 h-24 object-cover rounded-xl border border-brand-border flex-shrink-0" alt="${item.name}">` : ''}
+            <div class="flex-grow">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-display text-lg font-bold text-white uppercase">${item.name}</h3>
+                <span class="text-brand-yellow font-bold font-display text-lg">Q${item.price.toFixed(2)}</span>
+              </div>
+              <p class="text-zinc-400 text-xs mt-1 leading-relaxed">${item.desc}</p>
+            </div>
+          </div>
+          <button onclick="addToCart('${item.id}')" class="mt-4 w-full bg-zinc-800 hover:bg-brand-yellow hover:text-black text-zinc-200 font-bold py-2 px-4 rounded-xl transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+            <i class="fa-solid fa-plus text-xs"></i> Agregar a mi Orden
+          </button>
+        </div>
+      `).join('');
+    }
 
-        // CART LOGIC
-        function addToCart(itemId) {
-            const item = menuItems.find(p => p.id === itemId);
-            const existing = cart.find(c => c.id === itemId);
+    // FILTRAR CATEGORÍAS
+    function filterCategory(cat) {
+      document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active', 'bg-brand-yellow', 'text-black'));
+      event.target.classList.add('active', 'bg-brand-yellow', 'text-black');
 
-            if (existing) {
-                existing.quantity++;
-            } else {
-                cart.push({ ...item, quantity: 1 });
-            }
+      if (cat === 'all') {
+        renderMenu(menuData);
+      } else {
+        const filtered = menuData.filter(item => item.cat === cat);
+        renderMenu(filtered);
+      }
+    }
 
-            updateCartUI();
-            
-            const badge = document.getElementById('cart-badge');
-            badge.classList.add('scale-125');
-            setTimeout(() => badge.classList.remove('scale-125'), 200);
-        }
+    // CARRITO DE COMPRAS
+    function addToCart(id) {
+      const product = menuData.find(p => p.id === id);
+      const existing = cart.find(item => item.id === id);
 
-        function updateQuantity(itemId, delta) {
-            const index = cart.findIndex(c => c.id === itemId);
-            if (index !== -1) {
-                cart[index].quantity += delta;
-                if (cart[index].quantity <= 0) {
-                    cart.splice(index, 1);
-                }
-            }
-            updateCartUI();
-        }
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+      
+      // Abrir modal de carrito
+      document.getElementById('cartModal').classList.remove('hidden');
+    }
 
-        function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartBadge = document.getElementById('cart-badge');
-            const subtotalEl = document.getElementById('cart-subtotal');
-            const totalEl = document.getElementById('cart-total');
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
 
-            const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-            const totalCost = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      updateCartUI();
+    }
 
-            cartBadge.textContent = totalItems;
-            if (totalItems > 0) {
-                cartBadge.classList.remove('scale-0');
-            } else {
-                cartBadge.classList.add('scale-0');
-            }
+    function updateCartUI() {
+      const cartItems = document.getElementById('cartItems');
+      const cartCount = document.getElementById('cartCount');
+      const cartTotal = document.getElementById('cartTotal');
 
-            subtotalEl.textContent = `Q ${totalCost.toFixed(2)}`;
-            totalEl.textContent = `Q ${totalCost.toFixed(2)}`;
+      const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+      const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
 
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="text-center py-10 text-stone-500 space-y-3">
-                        <i class="fa-solid fa-beer-mug-empty text-3xl text-stone-800"></i>
-                        <p class="text-xs">Tu comanda está vacía.<br>Selecciona productos del menú.</p>
-                    </div>
-                `;
-                return;
-            }
+      cartCount.innerText = totalCount;
+      cartTotal.innerText = `Q${totalPrice.toFixed(2)}`;
 
-            cartItemsContainer.innerHTML = cart.map(item => `
-                <div class="bg-stone-900 p-3 rounded-xl border border-stone-800 flex items-center gap-3">
-                    <img src="${item.image}" alt="${item.name}" class="w-11 h-11 rounded-lg object-cover">
-                    <div class="flex-1 min-w-0">
-                        <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
-                        <p class="text-xs text-brand-amber font-semibold mt-0.5">Q ${item.price.toFixed(2)}</p>
-                    </div>
-                    <div class="flex items-center gap-2 bg-stone-950 px-2 py-1 rounded-lg border border-stone-800">
-                        <button onclick="updateQuantity(${item.id}, -1)" class="text-stone-400 hover:text-white text-xs px-1">-</button>
-                        <span class="text-xs font-bold text-white w-4 text-center">${item.quantity}</span>
-                        <button onclick="updateQuantity(${item.id}, 1)" class="text-stone-400 hover:text-white text-xs px-1">+</button>
-                    </div>
-                </div>
-            `).join('');
-        }
+      if (cart.length === 0) {
+        cartItems.innerHTML = `<p class="text-zinc-500 text-center py-8 text-sm">Tu carrito está vacío</p>`;
+        return;
+      }
 
-        function toggleCartModal() {
-            const modal = document.getElementById('cart-modal');
-            const drawer = document.getElementById('cart-drawer');
+      cartItems.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <div>
+            <h4 class="font-bold text-white text-sm uppercase">${item.name}</h4>
+            <span class="text-brand-yellow font-bold text-xs">Q${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+          <div class="flex items-center gap-2 bg-zinc-800 rounded-lg px-2 py-1">
+            <button onclick="changeQty('${item.id}', -1)" class="text-zinc-400 hover:text-white font-bold px-1.5">-</button>
+            <span class="text-white text-xs font-bold w-4 text-center">${item.qty}</span>
+            <button onclick="changeQty('${item.id}', 1)" class="text-zinc-400 hover:text-white font-bold px-1.5">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
 
-            if (modal.classList.contains('invisible')) {
-                modal.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
-                drawer.classList.remove('translate-x-full');
-            } else {
-                drawer.classList.add('translate-x-full');
-                modal.classList.add('opacity-0', 'pointer-events-none');
-                setTimeout(() => modal.classList.add('invisible'), 300);
-            }
-        }
+    function toggleCart() {
+      document.getElementById('cartModal').classList.toggle('hidden');
+    }
 
-        // SEND ORDER TO WHATSAPP / KITCHEN
-        function sendOrderWhatsApp() {
-            if (cart.length === 0) {
-                alert("La comanda está vacía. Por favor agrega productos del menú.");
-                return;
-            }
+    // ENVIAR A WHATSAPP
+    function sendWhatsAppOrder() {
+      if (cart.length === 0) return alert('Por favor agrega productos a tu orden.');
 
-            const custName = document.getElementById('cust-name').value.trim() || "Cliente en Mesa";
-            const notes = document.getElementById('cust-notes').value.trim();
-            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      let message = "*¡HOLA DON GATO! QUIERO HACER EL SIGUIENTE PEDIDO:*\n\n";
+      cart.forEach(item => {
+        message += `• *${item.qty}x* ${item.name} - Q${(item.price * item.qty).toFixed(2)}\n`;
+      });
 
-            let message = `*🐱🍺 ¡NUEVA COMANDA - DON GATO BAR!*\n`;
-            message += `----------------------------------\n`;
-            message += `📍 *UBICACIÓN / MESA:* ${activeMesa.toUpperCase()}\n`;
-            message += `👤 *Cliente:* ${custName}\n`;
-            message += `----------------------------------\n`;
-            message += `*DETALLE DEL PEDIDO:*\n`;
+      const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      message += `\n*TOTAL A PAGAR: Q${total.toFixed(2)}*\n\n_¡Muchas gracias!_`;
 
-            cart.forEach(item => {
-                message += `• ${item.quantity}x ${item.name} - Q ${(item.price * item.quantity).toFixed(2)}\n`;
-            });
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/50235897890?text=${encoded}`, '_blank');
+    }
 
-            message += `----------------------------------\n`;
-            message += `💰 *TOTAL COMANDA:* Q ${total.toFixed(2)}\n`;
-
-            if (notes) {
-                message += `\n📝 *Notas de preparación:* ${notes}\n`;
-            }
-
-            message += `\n📲 *Orden enviada vía Menú QR en Poptún, Petén.*`;
-
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/50235897890?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-
-        window.onload = function() {
-            initMesaFromURL();
-            renderMenu(menuItems);
-        };
-    </script>
+    // INICIALIZACIÓN
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMenu(menuData);
+    });
+  </script>
 </body>
 </html>

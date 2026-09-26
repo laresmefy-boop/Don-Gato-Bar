@@ -831,7 +831,7 @@
 
             const encodedMessage = encodeURIComponent(message);
             // Reemplaza con el número de teléfono real si lo deseas (Ej: 50250000000)
-            const whatsappUrl = `https://wa.me/50250000000?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/50235897890?text=${encodedMessage}`;
 
             window.open(whatsappUrl, '_blank');
         }

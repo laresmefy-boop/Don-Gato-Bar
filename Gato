@@ -106,7 +106,7 @@
             <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
                 <a href="#inicio" class="hover:text-brand-orange transition-colors">Inicio</a>
                 <a href="#ambiente" class="hover:text-brand-orange transition-colors">Especialidades</a>
-                <a href="#menu" class="hover:text-brand-orange transition-colors">Menú Chapín</a>
+                <a href="#menu" class="hover:text-brand-orange transition-colors">Menú </a>
                 <a href="https://www.instagram.com/dongato_bar" target="_blank" class="hover:text-brand-orange transition-colors flex items-center gap-1.5">
                     <i class="fa-brands fa-instagram text-pink-500"></i> @dongato_bar
                 </a>
@@ -154,7 +154,7 @@
             <!-- Botones de Acción -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <a href="#menu" class="w-full sm:w-auto bg-gradient-to-r from-brand-orange to-brand-amber text-stone-950 font-black px-8 py-4 rounded-full text-base sm:text-lg shadow-xl neon-glow hover:scale-105 transition-all text-center">
-                    <i class="fa-solid fa-burger mr-2"></i> Ver Menú Chapín
+                    <i class="fa-solid fa-burger mr-2"></i> Ver Menú 
                 </a>
                 <button onclick="toggleCartModal()" class="w-full sm:w-auto bg-stone-900/90 hover:bg-stone-800 border border-green-500/40 text-white font-bold px-8 py-4 rounded-full text-base sm:text-lg backdrop-blur-md transition-all text-center flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> Armar Mi Pedido
@@ -189,7 +189,7 @@
                     <img src="https://iili.io/nRpmvQS.jpg" alt="Ambiente Don Gato" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop';">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
                         <span class="inline-block px-3 py-1 bg-cyan-500 text-stone-950 font-black text-[10px] uppercase rounded-full w-fit mb-2">¡Haz Clic Aquí!</span>
-                        <h4 class="text-white font-black text-xl font-display group-hover:text-cyan-400 transition-colors">Cervezas & Cócteles <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
+                        <h4 class="text-white font-black text-xl font-display group-hover:text-cyan-400 transition-colors">Cócteles & Tragos <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
                         <p class="text-stone-300 text-xs mt-1">Micheladas, Piconas, Mojitos, Margaritas y más</p>
                     </div>
                 </div>
@@ -201,6 +201,41 @@
                         <span class="inline-block px-3 py-1 bg-brand-amber text-stone-950 font-black text-[10px] uppercase rounded-full w-fit mb-2">¡Haz Clic Aquí!</span>
                         <h4 class="text-white font-black text-xl font-display group-hover:text-brand-amber transition-colors">Para Compartir <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
                         <p class="text-stone-300 text-xs mt-1">Alitas, Nachos y Papas </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6">
+                <div onclick="selectCategoryFromGallery('compartir')" class="group relative rounded-2xl overflow-hidden border border-stone-800 bg-gradient-to-br from-stone-800 to-stone-900 shadow-xl h-56 cursor-pointer transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fa-solid fa-blender absolute inset-0 flex items-center justify-center text-6xl text-stone-700"></i>
+                    <img src="https://spoonandsip.com/wp-content/uploads/2025/02/smoothie_de_kiwi_y_piC3B1a.jpg" alt="Smoothies" class="relative w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-4">
+                        <h4 class="text-white font-black text-base sm:text-lg font-display group-hover:text-brand-orange transition-colors">Smoothies <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
+                        <p class="text-stone-300 text-[11px] mt-0.5">Frutas naturales y bien frías</p>
+                    </div>
+                </div>
+                <div onclick="selectCategoryFromGallery('fuertes')" class="group relative rounded-2xl overflow-hidden border border-stone-800 bg-gradient-to-br from-stone-800 to-stone-900 shadow-xl h-56 cursor-pointer transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fa-solid fa-utensils absolute inset-0 flex items-center justify-center text-6xl text-stone-700"></i>
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Platos Fuertes" class="relative w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-4">
+                        <h4 class="text-white font-black text-base sm:text-lg font-display group-hover:text-red-400 transition-colors">Platos Fuertes <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
+                        <p class="text-stone-300 text-[11px] mt-0.5">Churrasco, pechuga y puyaso</p>
+                    </div>
+                </div>
+                <div onclick="selectCategoryFromGallery('cervezas')" class="group relative rounded-2xl overflow-hidden border border-stone-800 bg-gradient-to-br from-stone-800 to-stone-900 shadow-xl h-56 cursor-pointer transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fa-solid fa-beer-mug-empty absolute inset-0 flex items-center justify-center text-6xl text-stone-700"></i>
+                    <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?q=80&w=800&auto=format&fit=crop" alt="Cervezas" class="relative w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-4">
+                        <h4 class="text-white font-black text-base sm:text-lg font-display group-hover:text-amber-400 transition-colors">Cervezas <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
+                        <p class="text-stone-300 text-[11px] mt-0.5">Gallo y Cabro bien heladas</p>
+                    </div>
+                </div>
+                <div onclick="selectCategoryFromGallery('naturales')" class="group relative rounded-2xl overflow-hidden border border-stone-800 bg-gradient-to-br from-stone-800 to-stone-900 shadow-xl h-56 cursor-pointer transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fa-solid fa-lemon absolute inset-0 flex items-center justify-center text-6xl text-stone-700"></i>
+                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=800&auto=format&fit=crop" alt="Naturales & Picheles" class="relative w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-4">
+                        <h4 class="text-white font-black text-base sm:text-lg font-display group-hover:text-lime-400 transition-colors">Jugos Naturales <i class="fa-solid fa-arrow-right text-xs ml-1"></i></h4>
+                        <p class="text-stone-300 text-[11px] mt-0.5">Naranjadas, limonadas, jamaica y más</p>
                     </div>
                 </div>
             </div>
@@ -222,7 +257,7 @@
                 <h4 class="text-2xl sm:text-3xl font-black text-white font-display">Don Gato Burger + Papas Fritas</h4>
                 <p class="text-stone-300 text-xs sm:text-sm max-w-xl">Carne jugosa, pan artesanal, vegetales frescos y nuestra cremita de jalapeño semipicante. ¡La consentida de Poptún!</p>
             </div>
-            <button onclick="addToCart(1)" class="bg-brand-orange hover:bg-brand-amber text-stone-950 font-black px-6 py-3.5 rounded-2xl shadow-lg transition-transform hover:scale-105 shrink-0 text-sm active:scale-95 z-10 flex items-center gap-2">
+            <button onclick="addToCart(26)" class="bg-brand-orange hover:bg-brand-amber text-stone-950 font-black px-6 py-3.5 rounded-2xl shadow-lg transition-transform hover:scale-105 shrink-0 text-sm active:scale-95 z-10 flex items-center gap-2">
                 <i class="fa-solid fa-plus font-bold"></i> Agregar Combo (Q 40.00)
             </button>
         </div>
@@ -232,17 +267,38 @@
             <button onclick="filterCategory('hamburguesas')" class="cat-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-brand-orange bg-brand-orange text-stone-950 shadow-md flex items-center gap-2" data-category="hamburguesas">
                 <i class="fa-solid fa-burger"></i> Hamburguesas
             </button>
+            <button onclick="filterCategory('fuertes')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="fuertes">
+                <i class="fa-solid fa-utensils"></i> Platos Fuertes
+            </button>
+            <button onclick="filterCategory('pastas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="pastas">
+                <i class="fa-solid fa-bowl-food"></i> Pastas & Sopas
+            </button>
             <button onclick="filterCategory('compartir')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="compartir">
-                <i class="fa-solid fa-cheese text-yellow-500"></i> Smoties
+                <i class="fa-solid fa-cheese"></i> Para Compartir
             </button>
             <button onclick="filterCategory('alitas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="alitas">
-                <i class="fa-solid fa-drumstick-bite text-brand-amber"></i> Alitas & Costillas
+                <i class="fa-solid fa-drumstick-bite"></i> Alitas
             </button>
-            <button onclick="filterCategory('fuertes')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="fuertes">
-                <i class="fa-solid fa-utensils text-red-500"></i> Platos Fuertes
+            <button onclick="filterCategory('smoothies')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="smoothies">
+                <i class="fa-solid fa-blender"></i> Smoothies & Frappés
             </button>
-            <button onclick="filterCategory('bebidas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="bebidas">
-                <i class="fa-solid fa-glass-water text-cyan-400"></i> Bebidas & Frías
+            <button onclick="filterCategory('naturales')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="naturales">
+                <i class="fa-solid fa-lemon"></i> Naturales & Picheles
+            </button>
+            <button onclick="filterCategory('calientes')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="calientes">
+                <i class="fa-solid fa-mug-hot"></i> Bebidas Calientes
+            </button>
+            <button onclick="filterCategory('cocktails')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="cocktails">
+                <i class="fa-solid fa-martini-glass-citrus"></i> Cocktails
+            </button>
+            <button onclick="filterCategory('cervezas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="cervezas">
+                <i class="fa-solid fa-beer-mug-empty"></i> Chelas
+            </button>
+            <button onclick="filterCategory('gaseosas')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="gaseosas">
+                <i class="fa-solid fa-bottle-water"></i> Gaseosas
+            </button>
+            <button onclick="filterCategory('shots')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all border border-stone-800 bg-stone-900 text-stone-300 hover:border-brand-orange flex items-center gap-2" data-category="shots">
+                <i class="fa-solid fa-glass-whiskey"></i> Shots
             </button>
         </div>
 
@@ -302,6 +358,14 @@
                         <i class="fa-brands fa-whatsapp text-base"></i> Abrir Mi Orden Chapina
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mapa" class="mt-6 bg-stone-900 rounded-2xl border border-stone-800 overflow-hidden scroll-mt-24">
+            <iframe title="Ubicación de Don Gato en Google Maps" src="https://maps.google.com/maps?q=16.3339996,-89.4240952&z=17&output=embed" class="w-full h-72 sm:h-96 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="p-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-stone-300 text-sm font-semibold"><i class="fa-solid fa-location-dot text-brand-orange mr-2"></i>Don Gato Bar & Restaurante, Poptún, Petén</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=16.3339996,-89.4240952" target="_blank" rel="noopener" class="bg-gradient-to-r from-brand-orange to-brand-amber text-stone-950 font-black px-6 py-3 rounded-full text-xs shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-2"><i class="fa-solid fa-diamond-turn-right"></i> Cómo llegar</a>
             </div>
         </div>
     </section>
@@ -368,253 +432,1009 @@
 
         // Datos del Menú Don Gato Bar & Restaurante (Precios en Quetzales Q)
         const menuItems = [
-            // HAMBURGUESAS
             {
                 id: 1,
-                name: "Don Gato Burger",
-                category: "hamburguesas",
-                price: 40.00,
-                description: "Pan artesanal, queso americano,  tortita de carne, lechuga scarola, tomate manzano, cebolla morada, aguacate y crema jalapeño semipicante. (Incluye papas).",
-                badge: "La Consentida ⭐"
-            },
-            {
-                id: 2,
-                name: "Torito Burger",
-                category: "hamburguesas",
-                price: 45.00,
-                description: "Pan artesanal, queso americano, carne de res, lechuga scarola, tomate manzano, cebolla morada, aguacate, jamón de pavo y huevo frito. (Incluye papas).",
+                name: "Pechuga a la Plancha",
+                category: "fuertes",
+                price: 55.00,
+                description: "8 oz de filete de pechuga a la plancha acompañada de dos guarniciones.",
                 badge: ""
             },
             {
+                id: 2,
+                name: "Churrasquito",
+                category: "fuertes",
+                price: 65.00,
+                description: "8 oz de carne de res a la plancha acompañada de dos guarniciones.",
+                badge: "100% Chapín 🇬🇹"
+            },
+            {
                 id: 3,
-                name: "Matute ",
-                category: "hamburguesas",
-                price: 48.00,
-                description: "Pan artesanal, queso americano, filete de pechuga jugosa, lechuga scarola, tomate manzano, cebolla morada, aguacate y aderezo de tamarindo. (Incluye papas).",
-                badge: "Pollo a la Plancha"
+                name: "Costilla de Cerdo a la BBQ",
+                category: "fuertes",
+                price: 60.00,
+                description: "8 oz de costilla de cerdo bañada en deliciosa salsa barbacoa, acompañada de dos guarniciones.",
+                badge: ""
             },
             {
                 id: 4,
-                name: "Crispy Chicken Burger",
-                category: "hamburguesas",
-                price: 52.00,
-                description: "Pan artesanal, queso americano, pechuga de pollo empanizada crujiente, lechuga scarola, tomate manzano, cebolla, aguacate y aderezo de la casa (Incluye papas).",
-                badge: "Bien Crujiente 👌"
+                name: "Chuleta de Cerdo",
+                category: "fuertes",
+                price: 60.00,
+                description: "Deliciosa chuleta importada de cerdo acompañada de dos guarniciones.",
+                badge: ""
             },
             {
                 id: 5,
-                name: "Popeye El Marino",
-                category: "hamburguesas",
-                price: 48.00,
-                description: "Pan artesanal, queso americano, carne de res, tocino crujiente, lechuga scarola, tomate manzano, cebolla, aguacate y aderezo de barbacoa  (Incluye papas).",
+                name: "Ensalada de la Casa",
+                category: "fuertes",
+                price: 50.00,
+                description: "Mezcla de vegetales frescos, acompañada de pollo a la plancha, crutones y aderezo de la casa.",
                 badge: ""
             },
             {
                 id: 6,
-                name: "Súper Torito",
-                category: "hamburguesas",
-                price: 55.00,
-                description: "Pan artesanal, queso americano, carne, lechuga scarola, tomate manzano, cebolla, aguacate, jamón de pavo, tocino y doble huevo. (Incluye papas).",
-                badge: "Para Buen Diente 🔥"
+                name: "Camarones al Mojo de Ajo",
+                category: "fuertes",
+                price: 110.00,
+                description: "8 oz de camarones jumbo preparados en mantequilla de ajo, acompañados de ensalada verde y papas fritas.",
+                badge: "Especial 🍤"
             },
             {
                 id: 7,
-                name: "Don Gato Doble",
-                category: "hamburguesas",
-                price: 63.00,
-                description: "Pan artesanal, queso americano, doble carne de res, lechuga scarola, tomate manzano, cebolla, aguacate y crema jalapeño semipicante. (Incluye doble porción de papas).",
-                badge: "Doble Carne 👑"
+                name: "Camarones Empanizados",
+                category: "fuertes",
+                price: 110.00,
+                description: "8 oz de camarones jumbo empanizados, acompañados de ensalada verde y papas fritas.",
+                badge: ""
             },
             {
                 id: 8,
-                name: "Goliat",
-                category: "hamburguesas",
-                price: 68.00,
-                description: "Pan artesanal, queso americano, carne de res, pechuga a la plancha, tocino crujiente, lechuga scarola, tomate manzano, cebolla, aguacate y aderezo de la casa. (Incluye papas).",
-                badge: "Exclusiva 🍔"
+                name: "Pasta Alfredo con Pollo",
+                category: "pastas",
+                price: 60.00,
+                description: "Pasta bañada en salsa alfredo cremosa, acompañada de pollo.",
+                badge: ""
             },
             {
                 id: 9,
-                name: "Cheese Burger ",
-                category: "hamburguesas",
-                price: 35.00,
-                description: "Pan artesanal, tortita de res, doble queso americano (Incluye papas).",
+                name: "Pasta Alfredo con Camarones",
+                category: "pastas",
+                price: 65.00,
+                description: "Pasta bañada en salsa alfredo cremosa, acompañada de camarones.",
                 badge: ""
             },
             {
                 id: 10,
-                name: "De Camaron ",
-                category: "hamburguesas",
-                price: 70.00,
-                description: "Pan artesanal, camarones empanizados, queso mozzarella rallado, aros de cebolla empanizados, lechuga scarola, tomate manzano y aguacate(Incluye papas).",
+                name: "Pasta Alfredo Mixta",
+                category: "pastas",
+                price: 85.00,
+                description: "Pasta bañada en salsa alfredo cremosa, con pollo y camarones.",
                 badge: ""
             },
             {
                 id: 11,
-                name: "Mar y Tierra ",
-                category: "hamburguesas",
-                price: 80.00,
-                description: "Pan artesanal, tortita de res,camarones empanizados, queso americano, queso mozzarella, cebolla morada, lechuga scarola, aguacate, tomate manzano y aderezo de la casa (Incluye papas).",
-                badge: ""
-            },
-
-            // Smoothies
-           {
-                id: 31,
-                name: "Cerro las Brujas",
-                category: "compartir",
-                price: 28.00,
-                description: "Kiwi+Naranja+Piña",
-                badge: ""
-            },
-            {
-                id: 30,
-                name: "Smoothie Chispudo",
-                category: "compartir",
-                price: 30.00,
-                description: "Frutos Rojos+Banano+Yogurth",
-                badge: ""
-            },
-            {
-                id: 29,
-                name: "Cerro las Tres Cruces",
-                category: "compartir",
-                price: 28.00,
-                description: "Fresa+Banano+Yogurth",
-                badge: ""
-            },
-            {
-                id: 28,
-                name: "Sandia Rock & Roll",
-                category: "compartir",
-                price: 25.00,
-                description: "Sandia+Limon+Menta",
+                name: "Sopa de Huevo",
+                category: "pastas",
+                price: 45.00,
+                description: "Reconfortante sopa casera de huevo.",
                 badge: ""
             },
             {
                 id: 12,
-                name: "Papas Supremas Don Gato",
-                category: "alitas",
-                price: 45.00,
-                description: "Papas fritas sazonadas bañadas en cheddar derretido, tocino crujiente picado y crema jalapeño casera.",
-                badge: "Ideal para la mesa 🍟"
+                name: "Sopa de Pollo",
+                category: "pastas",
+                price: 50.00,
+                description: "Reconfortante sopa casera de pollo.",
+                badge: ""
             },
             {
                 id: 13,
-                name: "Nachos Con Todo",
-                category: "alitas",
-                price: 50.00,
-                description: "Totopos tostados con fríjoles volteados, carne molida sazonada, queso fundido, guacamole, pico de gallo y crema.",
-                badge: "Favorito"
+                name: "Papas Fritas",
+                category: "compartir",
+                price: 25.00,
+                description: "Una libra de papas fritas, crujientes y en su punto exacto.",
+                badge: ""
             },
             {
                 id: 14,
-                name: "Deditos de Queso Mozzarella",
-                category: "alitas",
-                price: 38.00,
-                description: "6 palitos empanizados bien doraditos servidos con salsa marinara especial de la casa.",
-                badge: ""
+                name: "Papas Tocino y Queso",
+                category: "compartir",
+                image: "https://static.vecteezy.com/system/resources/previews/047/535/877/non_2x/french-fries-with-cheddar-and-diced-bacon-photo.jpg",
+                price: 35.00,
+                description: "Una libra de papas fritas bañadas con queso derretido y espolvoreadas con trozos de tocino crujiente.",
+                badge: "Ideal para la mesa 🍟"
             },
             {
                 id: 15,
-                name: "Aros de Cebolla Crujientes",
-                category: "alitas",
-                price: 30.00,
-                description: "Porción grande de aros empanizados acompañados de aderezo ranch de la casa.",
+                name: "Papas Salteadas",
+                category: "compartir",
+                price: 35.00,
+                description: "Deliciosas papas salteadas al fuego con mantequilla y un toque de ajo dorado.",
                 badge: ""
             },
-
-            // ALITAS & COSTILLAS
             {
                 id: 16,
-                name: "Alitas Don Gato (6 Piezas)",
-                category: "alitas",
-                price: 45.00,
-                description: "Alitas bañas a tu elección: BBQ Dulce, Búfalo Picante o Teriyaki. Servidas con bastones de apio y aderezo ranch.",
-                badge: "🔥 Muy Pedidas"
+                name: "Nachos",
+                category: "compartir",
+                image: "https://iili.io/n7o1HRs.jpg",
+                price: 42.00,
+                description: "Nachos, pico de gallo, queso y guacamole.",
+                badge: ""
             },
             {
                 id: 17,
-                name: "Alitas Don Gato (12 Piezas)",
-                category: "alitas",
-                price: 80.00,
-                description: "12 alitas de pollo fritas bien crujientes con combinación de hasta 2 salsas de tu preferencia.",
-                badge: "Para Compartir"
+                name: "Nachos Supremos",
+                category: "compartir",
+                price: 65.00,
+                description: "Nachos, pico de gallo, aguacate y chili beans con queso derretido encima.",
+                badge: "Favorito"
             },
             {
                 id: 18,
-                name: "Costillas a la BBQ",
-                category: "alitas",
-                price: 65.00,
-                description: "Tiernas costillitas de cerdo horneadas y glaseadas en salsa barbacoa dulce, acompañadas de papas o elote.",
-                badge: "Especial del Chef"
+                name: "Costillitas BBQ",
+                category: "compartir",
+                price: 60.00,
+                description: "Una libra de costillitas de cerdo bañadas en salsa BBQ.",
+                badge: ""
             },
-
-            // PLATOS FUERTES
             {
                 id: 19,
-                name: "Churrasco Chapín Don Gato",
-                category: "fuertes",
-                price: 65.00,
-                description: "Corte de carne de res a la parrilla, acompañado de fríjoles volteados, chirmol casero, guacamol, plátanos fritos y tortillas.",
-                badge: "100% Chapín 🇬🇹"
+                name: "Alitas Empanizadas",
+                category: "alitas",
+                price: 55.00,
+                description: "Alitas de pollo empanizadas y bien crujientes.",
+                badge: ""
             },
             {
                 id: 20,
-                name: "Pechuga a la Parrilla",
-                category: "fuertes",
+                name: "Alitas BBQ",
+                category: "alitas",
                 price: 55.00,
-                description: "Filete de pechuga marinada al carbón, servida con ensalada fresca, papas fritas o arroz y guacamol.",
+                description: "Alitas bañadas en salsa barbacoa dulce.",
                 badge: ""
             },
             {
                 id: 21,
-                name: "Puyaso Acompañado",
-                category: "fuertes",
-                price: 85.00,
-                description: "Jugoso corte de puyaso a la parrilla en su término ideal, servido con papas al horno, chirmol y ensalada.",
-                badge: "Corte Premium 🥩"
+                name: "Alitas Búfalo",
+                category: "alitas",
+                price: 55.00,
+                description: "Alitas bañadas en salsa búfalo picante.",
+                badge: "🔥 Muy Pedidas"
             },
-
-            // BEBIDAS & BEBIDAS FRÍAS
             {
                 id: 22,
-                name: "Michelada Don Gato",
-                category: "bebidas",
-                price: 30.00,
-                description: "Preparado especial con mezcla de salsas de la casa, limón recién exprimido, clamato, sal y cerveza de tu elección.",
-                badge: "Fría de Verdad 🍺"
+                name: "Alitas Piña Habanero",
+                category: "alitas",
+                price: 55.00,
+                description: "Alitas bañadas en salsa de piña con toque habanero.",
+                badge: ""
             },
             {
                 id: 23,
-                name: "Cerveza Gallo / Cabro Fría",
-                category: "bebidas",
-                price: 18.00,
-                description: "La cerveza de Guatemala bien muerta de frío para el calor de Poptún.",
-                badge: "Nacional 🇬🇹"
+                name: "Alitas Tamarindo",
+                category: "alitas",
+                price: 55.00,
+                description: "Alitas bañadas en salsa de tamarindo.",
+                badge: ""
             },
             {
                 id: 24,
-                name: "Mojito Cubano / Frutos Rojos",
-                category: "bebidas",
-                price: 35.00,
-                description: "Refrescante preparado con ron, hierbabuena fresca, azúcar y agua con gas bien helada.",
-                badge: "Refrescante"
+                name: "Alitas Salsas Mixtas",
+                category: "alitas",
+                price: 55.00,
+                description: "Alitas bañadas en combinación de salsas de la casa.",
+                badge: ""
             },
             {
                 id: 25,
-                name: "Pichel de Sangría Don Gato",
-                category: "bebidas",
+                name: "Alitas Supremas",
+                category: "alitas",
                 price: 75.00,
-                description: "Pichel entero de vino tinto macerado con fruta fresca de temporada, cítricos y toque de licor.",
-                badge: "Para la Mesa 🍷"
+                description: "Alitas acompañadas de papas y ensalada.",
+                badge: "Para Compartir"
             },
             {
                 id: 26,
-                name: "Gaseosa / Agua Pura",
-                category: "bebidas",
+                name: "Don Gato Burger",
+                category: "hamburguesas",
+                image: "https://iili.io/n5FOLMb.jpg",
+                price: 40.00,
+                description: "Pan tipo artesanal, queso americano, tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate y crema jalapeño semipicante. Incluye papas.",
+                badge: "La Consentida ⭐"
+            },
+            {
+                id: 27,
+                name: "Torito",
+                category: "hamburguesas",
+                image: "https://iili.io/n5BFCgt.jpg",
+                price: 45.00,
+                description: "Pan tipo artesanal, queso americano, tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate, jamón de pavo y huevo. Incluye papas.",
+                badge: ""
+            },
+            {
+                id: 28,
+                name: "Matute",
+                category: "hamburguesas",
+                image: "https://iili.io/n5BAfup.jpg",
+                price: 48.00,
+                description: "Pan tipo artesanal, queso americano, filete de pechuga, lechuga escarola, tomate, cebolla morada, aguacate y aderezo de tamarindo. Incluye papas.",
+                badge: "Pollo a la Plancha"
+            },
+            {
+                id: 29,
+                name: "Crispy Chicken",
+                category: "hamburguesas",
+                image: "https://storage.googleapis.com/assets.getclone.io/manage%2FJFK%20Burgers%2FFried%20Chicken%20Burger-dcc739b5a6bf3f149f6b.jpeg",
+                price: 52.00,
+                description: "Pan tipo artesanal, queso americano, pechuga de pollo empanizada, lechuga escarola, tomate, cebolla morada, aguacate y aderezo chipotle. Incluye papas.",
+                badge: "Bien Crujiente 👌"
+            },
+            {
+                id: 30,
+                name: "Popeye El Marino",
+                category: "hamburguesas",
+                image: "https://iili.io/n7fqJN2.jpg",
+                price: 48.00,
+                description: "Pan tipo artesanal, queso americano, tortita de carne, tocino, lechuga escarola, tomate, cebolla morada, aguacate y salsa barbacoa. Incluye papas.",
+                badge: ""
+            },
+            {
+                id: 31,
+                name: "Super Torito",
+                category: "hamburguesas",
+                image: "https://iili.io/n7fmbCx.jpg",
+                price: 52.00,
+                description: "Pan tipo artesanal, queso americano, tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate, jamón de pavo, tocino y doble huevo. Incluye papas.",
+                badge: "Para Buen Diente 🔥"
+            },
+            {
+                id: 32,
+                name: "Don Gato Doble",
+                category: "hamburguesas",
+                price: 63.00,
+                description: "Pan tipo artesanal, queso americano, doble tortita de carne, lechuga escarola, tomate, cebolla morada, aguacate y crema jalapeño semipicante. Incluye doble porción de papas.",
+                badge: "Doble Carne 👑"
+            },
+            {
+                id: 33,
+                name: "Goliat",
+                category: "hamburguesas",
+                price: 66.00,
+                description: "Pan tipo artesanal, queso americano, tortita de carne, filete de pechuga, tocino, lechuga escarola, tomate, cebolla morada, aguacate y crema jalapeño semipicante. Incluye papas.",
+                badge: "Exclusiva 🍔"
+            },
+            {
+                id: 34,
+                name: "Cheese Burguer",
+                category: "hamburguesas",
+                price: 35.00,
+                description: "Pan tipo artesanal, doble queso americano y tortita de carne. Incluye papas.",
+                badge: ""
+            },
+            {
+                id: 35,
+                name: "Camarón",
+                category: "hamburguesas",
+                image: "https://iili.io/n7Bh5J9.jpg",
+                price: 70.00,
+                description: "Pan tipo artesanal, queso mozzarella rallado, camarones empanizados, aros de cebolla empanizados, lechuga escarola, tomate y guacamole. Incluye papas.",
+                badge: ""
+            },
+            {
+                id: 36,
+                name: "Mar y Tierra",
+                category: "hamburguesas",
+                price: 80.00,
+                description: "Pan tipo artesanal, queso mozzarella rallado, camarones empanizados, tortita de carne, queso americano, cebolla morada, lechuga escarola, tomate, guacamole y aderezo de la casa. Incluye papas.",
+                badge: ""
+            },
+            {
+                id: 37,
+                name: "Sandia Rock & Roll",
+                category: "smoothies",
+                image: "https://img.freepik.com/premium-photo/watermelon-drink-with-mint-ice-cold-drinks-summer-healthy-eating-vegetarian-food_97840-3707.jpg",
+                price: 25.00,
+                description: "Sandía + limón + menta.",
+                badge: ""
+            },
+            {
+                id: 38,
+                name: "Cerro las Tres Cruces",
+                category: "smoothies",
+                image: "https://imperiocientifico.com/wp-content/uploads/2023/08/beneficios-del-licuado-de-fresa-2-1.jpg",
+                price: 28.00,
+                description: "Fresa + banano + yogurth.",
+                badge: ""
+            },
+            {
+                id: 39,
+                name: "Smoothie Chispudo",
+                category: "smoothies",
+                image: "https://static.wixstatic.com/media/e4ec8e_8d8345751ff742d296ed2c2d26df97a5~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/e4ec8e_8d8345751ff742d296ed2c2d26df97a5~mv2.jpg",
+                price: 30.00,
+                description: "Frutos rojos + banano + yogurth.",
+                badge: ""
+            },
+            {
+                id: 40,
+                name: "Cerro de la Bruja",
+                category: "smoothies",
+                image: "https://spoonandsip.com/wp-content/uploads/2025/02/smoothie_de_kiwi_y_piC3B1a.jpg",
+                price: 28.00,
+                description: "Kiwi + naranja + piña.",
+                badge: ""
+            },
+            {
+                id: 41,
+                name: "Frappé Oreo",
+                category: "smoothies",
+                price: 25.00,
+                description: "Frappé cremoso con galleta Oreo.",
+                badge: ""
+            },
+            {
+                id: 42,
+                name: "Frappé Café",
+                category: "smoothies",
+                price: 22.00,
+                description: "Frappé de café bien frío.",
+                badge: ""
+            },
+            {
+                id: 43,
+                name: "Frappé Oreo Baileys",
+                category: "smoothies",
+                price: 35.00,
+                description: "Frappé de Oreo con un toque de licor Baileys.",
+                badge: ""
+            },
+            {
+                id: 44,
+                name: "Naranjada",
+                category: "naturales",
+                price: 20.00,
+                description: "Naranja natural recién exprimida.",
+                badge: ""
+            },
+            {
+                id: 45,
+                name: "Naranjada con Soda",
+                category: "naturales",
+                price: 22.00,
+                description: "Naranjada natural con un toque de soda.",
+                badge: ""
+            },
+            {
+                id: 46,
+                name: "Limonada",
+                category: "naturales",
+                price: 20.00,
+                description: "Limón natural recién exprimido.",
+                badge: ""
+            },
+            {
+                id: 47,
+                name: "Limonada con Soda",
+                category: "naturales",
+                price: 22.00,
+                description: "Limonada natural con un toque de soda.",
+                badge: ""
+            },
+            {
+                id: 48,
+                name: "Jamaica Frozzen",
+                category: "naturales",
+                price: 22.00,
+                description: "Refresco de flor de jamaica bien helado, estilo frozen.",
+                badge: ""
+            },
+            {
+                id: 49,
+                name: "Jugo de Maracuyá",
+                category: "naturales",
+                price: 22.00,
+                description: "Jugo natural de maracuyá.",
+                badge: ""
+            },
+            {
+                id: 50,
+                name: "Pichel de Jamaica",
+                category: "naturales",
+                price: 40.00,
+                description: "Pichel entero de refresco de jamaica para compartir.",
+                badge: "Para la Mesa 🍷"
+            },
+            {
+                id: 51,
+                name: "Pichel de Limón",
+                category: "naturales",
+                price: 40.00,
+                description: "Pichel entero de limonada natural para compartir.",
+                badge: "Para la Mesa 🍷"
+            },
+            {
+                id: 52,
+                name: "Pichel de Tamarindo",
+                category: "naturales",
+                price: 40.00,
+                description: "Pichel entero de refresco de tamarindo para compartir.",
+                badge: "Para la Mesa 🍷"
+            },
+            {
+                id: 53,
+                name: "Pichel de Maracuyá",
+                category: "naturales",
+                price: 48.00,
+                description: "Pichel entero de jugo de maracuyá para compartir.",
+                badge: "Para la Mesa 🍷"
+            },
+            {
+                id: 54,
+                name: "Café Americano",
+                category: "calientes",
+                price: 12.00,
+                description: "Café americano recién preparado.",
+                badge: ""
+            },
+            {
+                id: 55,
+                name: "Café Bonito",
+                category: "calientes",
+                price: 20.00,
+                description: "Café americano + bola de helado de vainilla + topping de crema batida.",
+                badge: ""
+            },
+            {
+                id: 56,
+                name: "Chocolate",
+                category: "calientes",
+                price: 18.00,
+                description: "Chocolate caliente cremoso.",
+                badge: ""
+            },
+            {
+                id: 57,
+                name: "Té",
+                category: "calientes",
+                price: 12.00,
+                description: "Té caliente de tu preferencia.",
+                badge: ""
+            },
+            {
+                id: 58,
+                name: "Cuba Libre",
+                category: "cocktails",
+                price: 22.00,
+                description: "Ron con Coca-Cola y limón.",
+                badge: ""
+            },
+            {
+                id: 59,
+                name: "Mojito",
+                category: "cocktails",
+                price: 22.00,
+                description: "Ron, hierbabuena, azúcar y soda. A elegir: limón, fresa o maracuyá.",
+                badge: "Refrescante"
+            },
+            {
+                id: 60,
+                name: "Daiquiri",
+                category: "cocktails",
+                price: 25.00,
+                description: "Coctel de ron helado y frutal.",
+                badge: ""
+            },
+            {
+                id: 61,
+                name: "Peltrito Quezalteca",
+                category: "cocktails",
+                price: 30.00,
+                description: "Coctel preparado con aguardiente Quezalteca.",
+                badge: ""
+            },
+            {
+                id: 62,
+                name: "Piña Colada",
+                category: "cocktails",
+                price: 30.00,
+                description: "Ron, piña y crema de coco.",
+                badge: ""
+            },
+            {
+                id: 63,
+                name: "Azulitos",
+                category: "cocktails",
+                price: 30.00,
+                description: "Coctel refrescante de licor azul curazao.",
+                badge: ""
+            },
+            {
+                id: 64,
+                name: "Ruso Blanco",
+                category: "cocktails",
+                price: 40.00,
+                description: "Vodka, licor de café y crema de leche.",
+                badge: ""
+            },
+            {
+                id: 65,
+                name: "Destornillador",
+                category: "cocktails",
+                price: 22.00,
+                description: "Vodka con jugo de naranja.",
+                badge: ""
+            },
+            {
+                id: 66,
+                name: "Suerito",
+                category: "cocktails",
+                price: 25.00,
+                description: "Coctel de vodka bien refrescante.",
+                badge: ""
+            },
+            {
+                id: 67,
+                name: "Bloody Mary",
+                category: "cocktails",
+                price: 45.00,
+                description: "Vodka con jugo de tomate y especias.",
+                badge: ""
+            },
+            {
+                id: 68,
+                name: "Margarita Clásica",
+                category: "cocktails",
+                price: 30.00,
+                description: "Tequila, triple sec y limón.",
+                badge: ""
+            },
+            {
+                id: 69,
+                name: "Tequila Sunrise",
+                category: "cocktails",
+                price: 25.00,
+                description: "Tequila, jugo de naranja y granadina.",
+                badge: ""
+            },
+            {
+                id: 70,
+                name: "Mezcalita de Frutos Rojos",
+                category: "cocktails",
+                price: 45.00,
+                description: "Mezcal con mezcla de frutos rojos.",
+                badge: ""
+            },
+            {
+                id: 71,
+                name: "Mezcalita de Tamarindo",
+                category: "cocktails",
+                price: 45.00,
+                description: "Mezcal con tamarindo.",
+                badge: ""
+            },
+            {
+                id: 72,
+                name: "Gin Tonic",
+                category: "cocktails",
+                price: 30.00,
+                description: "Gin con agua tónica.",
+                badge: ""
+            },
+            {
+                id: 73,
+                name: "Gin Frutos Rojos",
+                category: "cocktails",
+                price: 45.00,
+                description: "Gin con mezcla de frutos rojos.",
+                badge: ""
+            },
+            {
+                id: 74,
+                name: "South Side",
+                category: "cocktails",
+                price: 30.00,
+                description: "Gin, limón, azúcar y hierbabuena.",
+                badge: ""
+            },
+            {
+                id: 75,
+                name: "Whisky Sour",
+                category: "cocktails",
+                price: 30.00,
+                description: "Whisky, limón y azúcar.",
+                badge: ""
+            },
+            {
+                id: 76,
+                name: "Jager Bomb",
+                category: "cocktails",
+                price: 50.00,
+                description: "Jägermeister con bebida energética.",
+                badge: ""
+            },
+            {
+                id: 77,
+                name: "Sangría",
+                category: "cocktails",
+                price: 45.00,
+                description: "Vino tinto macerado con fruta fresca.",
+                badge: ""
+            },
+            {
+                id: 78,
+                name: "El Zapote",
+                category: "cervezas",
+                price: 20.00,
+                description: "Cerveza artesanal El Zapote.",
+                badge: ""
+            },
+            {
+                id: 79,
+                name: "Antigua",
+                category: "cervezas",
+                price: 30.00,
+                description: "Cerveza artesanal Antigua. Pregunta si hay otras variedades disponibles.",
+                badge: ""
+            },
+            {
+                id: 80,
+                name: "Gallo",
+                category: "cervezas",
+                price: 15.00,
+                description: "Cerveza nacional Gallo bien fría.",
+                badge: "Nacional 🇬🇹"
+            },
+            {
+                id: 81,
+                name: "Cabro",
+                category: "cervezas",
+                price: 15.00,
+                description: "Cerveza nacional Cabro bien fría.",
+                badge: "Nacional 🇬🇹"
+            },
+            {
+                id: 82,
+                name: "Tecate",
+                category: "cervezas",
+                price: 12.00,
+                description: "Cerveza Tecate bien fría.",
+                badge: ""
+            },
+            {
+                id: 83,
+                name: "Moza",
+                category: "cervezas",
+                price: 15.00,
+                description: "Cerveza Moza bien fría.",
+                badge: ""
+            },
+            {
+                id: 84,
+                name: "Bacardí",
+                category: "cervezas",
+                price: 18.00,
+                description: "Cerveza Bacardí bien fría.",
+                badge: ""
+            },
+            {
+                id: 85,
+                name: "Monte Carlo",
+                category: "cervezas",
+                price: 18.00,
+                description: "Cerveza Monte Carlo bien fría.",
+                badge: ""
+            },
+            {
+                id: 86,
+                name: "Heineken",
+                category: "cervezas",
+                price: 18.00,
+                description: "Cerveza Heineken bien fría.",
+                badge: ""
+            },
+            {
+                id: 87,
+                name: "Karma",
+                category: "cervezas",
+                price: 12.00,
+                description: "Cerveza Karma bien fría.",
+                badge: ""
+            },
+            {
+                id: 88,
+                name: "Michelada",
+                category: "cervezas",
+                price: 25.00,
+                description: "Preparado con salsas de la casa, limón, clamato, sal y cerveza de tu elección.",
+                badge: "Fría de Verdad 🍺"
+            },
+            {
+                id: 89,
+                name: "Chelada",
+                category: "cervezas",
+                price: 25.00,
+                description: "Cerveza preparada con limón y sal.",
+                badge: ""
+            },
+            {
+                id: 90,
+                name: "Picona Gallo",
+                category: "cervezas",
+                price: 20.00,
+                description: "Cerveza Gallo preparada estilo picona.",
+                badge: ""
+            },
+            {
+                id: 91,
+                name: "Picona Tecate",
+                category: "cervezas",
+                price: 18.00,
+                description: "Cerveza Tecate preparada estilo picona.",
+                badge: ""
+            },
+            {
+                id: 92,
+                name: "Cimarrona",
+                category: "cervezas",
+                price: 20.00,
+                description: "Preparado de cerveza estilo cimarrona.",
+                badge: ""
+            },
+            {
+                id: 93,
+                name: "Michelada de Mineral",
+                category: "cervezas",
+                price: 20.00,
+                description: "Michelada preparada con agua mineral.",
+                badge: ""
+            },
+            {
+                id: 94,
+                name: "Picona de Mineral",
+                category: "cervezas",
+                price: 18.00,
+                description: "Picona preparada con agua mineral.",
+                badge: ""
+            },
+            {
+                id: 95,
+                name: "Coca-Cola",
+                category: "gaseosas",
                 price: 10.00,
-                description: "Coca-Cola, Sprite, Fanta o Agua Pura embotellada helada.",
+                description: "Coca-Cola bien helada.",
+                badge: ""
+            },
+            {
+                id: 96,
+                name: "Orange Crush",
+                category: "gaseosas",
+                price: 10.00,
+                description: "Orange Crush bien helada.",
+                badge: ""
+            },
+            {
+                id: 97,
+                name: "Tiki",
+                category: "gaseosas",
+                price: 10.00,
+                description: "Gaseosa Tiki bien helada.",
+                badge: ""
+            },
+            {
+                id: 98,
+                name: "Ginger Ale",
+                category: "gaseosas",
+                price: 10.00,
+                description: "Ginger Ale bien helada.",
+                badge: ""
+            },
+            {
+                id: 99,
+                name: "Santa Delfina",
+                category: "gaseosas",
+                price: 10.00,
+                description: "Agua carbonatada Santa Delfina.",
+                badge: ""
+            },
+            {
+                id: 100,
+                name: "Agua Mineral",
+                category: "gaseosas",
+                price: 10.00,
+                description: "Agua mineral bien helada.",
+                badge: ""
+            },
+            {
+                id: 101,
+                name: "Agua Pura",
+                category: "gaseosas",
+                price: 10.00,
+                description: "Agua pura embotellada.",
+                badge: ""
+            },
+            {
+                id: 102,
+                name: "Zacapa",
+                category: "shots",
+                price: 55.00,
+                description: "Shot de ron Zacapa.",
+                badge: ""
+            },
+            {
+                id: 103,
+                name: "XL",
+                category: "shots",
+                price: 25.00,
+                description: "Shot de ron XL.",
+                badge: ""
+            },
+            {
+                id: 104,
+                name: "Venado",
+                category: "shots",
+                price: 25.00,
+                description: "Shot de ron Venado.",
+                badge: ""
+            },
+            {
+                id: 105,
+                name: "Quezalteca",
+                category: "shots",
+                price: 25.00,
+                description: "Shot de aguardiente Quezalteca.",
+                badge: ""
+            },
+            {
+                id: 106,
+                name: "Viuda de Romero",
+                category: "shots",
+                price: 35.00,
+                description: "Shot de tequila Viuda de Romero.",
+                badge: ""
+            },
+            {
+                id: 107,
+                name: "José Cuervo",
+                category: "shots",
+                price: 40.00,
+                description: "Shot de tequila José Cuervo.",
+                badge: ""
+            },
+            {
+                id: 108,
+                name: "Jimador",
+                category: "shots",
+                price: 35.00,
+                description: "Shot de tequila Jimador.",
+                badge: ""
+            },
+            {
+                id: 109,
+                name: "Altos",
+                category: "shots",
+                price: 45.00,
+                description: "Shot de tequila Altos.",
+                badge: ""
+            },
+            {
+                id: 110,
+                name: "Herradura",
+                category: "shots",
+                price: 60.00,
+                description: "Shot de tequila Herradura.",
+                badge: ""
+            },
+            {
+                id: 111,
+                name: "Don Julio Blanco",
+                category: "shots",
+                price: 65.00,
+                description: "Shot de tequila Don Julio Blanco.",
+                badge: ""
+            },
+            {
+                id: 112,
+                name: "Don Julio 70",
+                category: "shots",
+                price: 75.00,
+                description: "Shot de tequila Don Julio 70.",
+                badge: ""
+            },
+            {
+                id: 113,
+                name: "Patrón",
+                category: "shots",
+                price: 65.00,
+                description: "Shot de tequila Patrón.",
+                badge: ""
+            },
+            {
+                id: 114,
+                name: "Gran Malo",
+                category: "shots",
+                price: 35.00,
+                description: "Shot de tequila Gran Malo.",
+                badge: ""
+            },
+            {
+                id: 115,
+                name: "Zinglum",
+                category: "shots",
+                price: 50.00,
+                description: "Shot de mezcal Zinglum.",
+                badge: ""
+            },
+            {
+                id: 116,
+                name: "Zunte",
+                category: "shots",
+                price: 65.00,
+                description: "Shot de mezcal Zunte.",
+                badge: ""
+            },
+            {
+                id: 117,
+                name: "Vat 69",
+                category: "shots",
+                price: 25.00,
+                description: "Shot de whisky Vat 69.",
+                badge: ""
+            },
+            {
+                id: 118,
+                name: "Jameson",
+                category: "shots",
+                price: 35.00,
+                description: "Shot de whisky Jameson.",
+                badge: ""
+            },
+            {
+                id: 119,
+                name: "Old Parr",
+                category: "shots",
+                price: 45.00,
+                description: "Shot de whisky Old Parr.",
+                badge: ""
+            },
+            {
+                id: 120,
+                name: "Jack Daniel's",
+                category: "shots",
+                price: 40.00,
+                description: "Shot de whisky Jack Daniel's.",
+                badge: ""
+            },
+            {
+                id: 121,
+                name: "Red Label",
+                category: "shots",
+                price: 35.00,
+                description: "Shot de whisky Red Label.",
+                badge: ""
+            },
+            {
+                id: 122,
+                name: "Black Label",
+                category: "shots",
+                price: 55.00,
+                description: "Shot de whisky Black Label.",
+                badge: ""
+            },
+            {
+                id: 123,
+                name: "Doble Black",
+                category: "shots",
+                price: 70.00,
+                description: "Shot de whisky Doble Black.",
+                badge: ""
+            },
+            {
+                id: 124,
+                name: "Chivas",
+                category: "shots",
+                price: 50.00,
+                description: "Shot de whisky Chivas.",
                 badge: ""
             }
         ];
@@ -638,8 +1458,13 @@
             }
 
             menuGrid.innerHTML = items.map(item => `
-                <div class="bg-stone-900 border border-stone-800 rounded-2xl p-5 flex flex-col justify-between hover:border-brand-orange/40 transition-all shadow-md group">
-                    <div class="space-y-2">
+                <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-brand-orange/40 transition-all shadow-md group">
+                    ${item.image ? `
+                    <div class="w-full h-64 sm:h-72 overflow-hidden">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" onerror="this.parentElement.style.display='none';">
+                    </div>
+                    ` : ''}
+                    <div class="p-5 space-y-2 flex-1">
                         <div class="flex items-start justify-between gap-2">
                             <h4 class="text-white font-extrabold text-lg font-display group-hover:text-brand-orange transition-colors">${item.name}</h4>
                             <span class="text-brand-orange font-black text-base whitespace-nowrap font-display">Q ${item.price.toFixed(2)}</span>
@@ -648,7 +1473,7 @@
                         <p class="text-stone-400 text-xs leading-relaxed">${item.description}</p>
                     </div>
 
-                    <div class="pt-4 mt-4 border-t border-stone-800/80 flex items-center justify-between">
+                    <div class="px-5 pb-5 pt-4 mt-0 border-t border-stone-800/80 flex items-center justify-between">
                         <span class="text-[11px] text-stone-500 font-semibold uppercase tracking-wider">Don Gato Poptún</span>
                         <button onclick="addToCart(${item.id})" class="bg-stone-800 hover:bg-brand-orange text-white hover:text-stone-950 font-bold px-4 py-2 rounded-xl text-xs transition-all active:scale-95 flex items-center gap-1.5 shadow">
                             <i class="fa-solid fa-plus text-xs"></i> Agregar
@@ -806,13 +1631,13 @@
             const details = document.getElementById('cust-details').value.trim() || 'Sin especificar';
             const notes = document.getElementById('cust-notes').value.trim();
 
-            let message = `🐱 *NUEVO PEDIDO - DON GATO BAR & RESTAURANTE*\n`;
+            let message = `NUEVO PEDIDO - DON GATO BAR & RESTAURANTE\n`;
             message += `-----------------------------------\n`;
-            message += `👤 *Nombre:* ${name}\n`;
-            message += `📌 *Modalidad:* ${type}\n`;
-            message += `📍 *Mesa / Hora:* ${details}\n`;
+            message += `Nombre: ${name}\n`;
+            message += `Modalidad: ${type}\n`;
+            message += ` *Mesa: ${details}\n`;
             message += `-----------------------------------\n`;
-            message += `🍔 *DETALLE DEL PEDIDO:*\n`;
+            message += `🍔 DETALLE DEL PEDIDO:\n`;
 
             cart.forEach(item => {
                 message += `• ${item.qty}x ${item.name} (Q ${(item.price * item.qty).toFixed(2)})\n`;
@@ -820,10 +1645,10 @@
 
             const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             message += `-----------------------------------\n`;
-            message += `💰 *TOTAL A PAGAR:* Q ${total.toFixed(2)}\n`;
+            message += `TOTAL A PAGAR: Q ${total.toFixed(2)}\n`;
 
             if (notes) {
-                message += `📝 *Notas Especiales:* ${notes}\n`;
+                message += `Notas Especiales: ${notes}\n`;
             }
 
             message += `-----------------------------------\n`;
